@@ -1,25 +1,24 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import About from './components/About';
+import Navbar from './components/Navbar'; 
+// import Textarea from './components/Textarea'; 
+// import Textarea from './components/textarea'; 
+import Textflied from './components/Textfleid'; 
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-
-        </a>
-      </header>
-    </div>
+    <> 
+    {/* // this is called fragment tag */}
+    <Navbar title="aditya"/>
+    {/* <Textarea headingtext="To convert text"/> */}
+    <Textflied  headingtext="To convert text"/>
+     <div className='container my-5'>
+      <About/>
+     </div>
+    
+    
+    </>
   );
 }
 
