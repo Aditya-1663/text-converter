@@ -5,11 +5,13 @@ export default function Textfleid(props) {
     console.log("this button is clicked");
     let newtext=text.toUpperCase() ;
     setText(newtext)
+    props.showalert(" : changed to uppercase ","success")
   }
   const handleloclick =()=>{
     console.log("this button is clicked");
     let newtext=text.toLowerCase();
     setText(newtext)
+    props.showalert(" : changed to lowercase ","success")
   }
   const handleonchange =(event)=>{
     console.log("changed");
@@ -21,9 +23,9 @@ export default function Textfleid(props) {
   return (
     <>
    
-    <div className='container '>
+    <div className='container ' style={{color: props.mode==='dark'?'white':'black'}}>
     <h1>{props.headingtext}</h1>
-    <textarea className="form-control" id="exampleFormControlTextarea1" value={text} onChange={handleonchange} rows="8"></textarea>
+    <textarea className={`form-control `} style={{backgroundColor: props.mode==='dark'?'gray':'white',color:props.mode==='dark'?'white':'black'}} id="exampleFormControlTextarea1" value={text} onChange={handleonchange} rows="8"></textarea>
   
     <button className='btn btn-primary mx-2' onClick={handleclick}>uppercase</button>
     <button className='btn btn-primary mx-2' onClick={handleloclick}>lowercase</button>
