@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 
-import { render } from '@testing-library/react';
+// import { render } from '@testing-library/react';
 import './App.css';
 // import { Routes } from 'react-router-dom';
 import About from './components/About';
@@ -76,7 +76,7 @@ function App() {
 
         <Switch>
 
-          <Route exact path='/about' ><About /></Route>
+          <Route exact path='/about2' ><About /></Route>
           <Route exact path='/'  >
             <Textflied mode={mode} showalert={showalert} headingtext="To convert text" />
           </Route>

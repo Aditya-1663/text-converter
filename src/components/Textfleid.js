@@ -27,15 +27,17 @@ export default function Textfleid(props) {
     <h1>{props.headingtext}</h1>
     <textarea className={`form-control `} style={{backgroundColor: props.mode==='dark'?'gray':'white',color:props.mode==='dark'?'white':'black'}} id="exampleFormControlTextarea1" value={text} onChange={handleonchange} rows="8"></textarea>
   
-    <button className='btn btn-primary mx-2' onClick={handleclick}>uppercase</button>
-    <button className='btn btn-primary mx-2' onClick={handleloclick}>lowercase</button>
+    <button disabled={text.length===0} className='btn btn-primary mx-2 my-2' onClick={handleclick}>uppercase</button>
+    <button disabled={text.length===0} className='btn btn-primary mx-2 my-2' onClick={handleloclick}>lowercase</button>
 </div>
 
 <div className='container my-3'>
   <h1>
     Your text summary
   </h1>
-  <p>{text.split(" ").length} words, {text.length} char</p>
+
+  {/* here the /\s+/ means the regular exprasion*/}
+  <p>{text.split("/\n+/ ").filter((Element)=>{return(Element.length!==0)}).length} words, {text.length} char</p>
   {/* {console.log(text)} */}
 </div>
 
